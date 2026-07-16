@@ -1,0 +1,373 @@
+/* ===== GOOGLE FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ===== CSS VARIABLES (Netflix Palette) ===== */
+:root {
+    --red: #e50914;
+    --red-dark: #b20610;
+    --red-glow: rgba(229, 9, 20, 0.35);
+    --bg: #141414;
+    --bg-card: #1f1f1f;
+    --bg-about: #1a1a1a;
+    --text: #ffffff;
+    --text-muted: #b3b3b3;
+    --border: #2a2a2a;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 100%);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--red);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.25s;
+}
+
+nav ul li a:hover {
+    color: var(--text);
+}
+
+/* ===== HERO ===== */
+.hero {
+    background:
+        linear-gradient(to right, rgba(0, 0, 0, 0.85) 40%, rgba(0, 0, 0, 0.3) 100%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(20, 20, 20, 1) 100%),
+        url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1400&auto=format&fit=crop') center/cover no-repeat;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    padding: 80px 24px;
+}
+
+.hero-content {
+    max-width: 620px;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    color: #fff;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h1 span {
+    color: var(--red);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    max-width: 480px;
+    line-height: 1.7;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    background-color: var(--red);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    transition: background-color 0.25s, box-shadow 0.25s, transform 0.2s;
+    box-shadow: 0 0 0 transparent;
+}
+
+.btn:hover {
+    background-color: var(--red-dark);
+    box-shadow: 0 0 20px var(--red-glow);
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    background-color: var(--red);
+    color: #fff;
+    padding: 9px 20px;
+    font-size: 0.82rem;
+    border-radius: 5px;
+    letter-spacing: 0.3px;
+}
+
+.btn-small:hover {
+    background-color: var(--red-dark);
+    box-shadow: 0 0 14px var(--red-glow);
+    transform: translateY(-2px);
+}
+
+/* ===== SECTION COMMONS ===== */
+.section-title {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 6px;
+    display: block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--red);
+    border-radius: 2px;
+    margin: 8px auto 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+/* ===== BOOKS SECTION ===== */
+.books-section {
+    padding: 70px 24px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 24px;
+}
+
+.book-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: scale(1.06) translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--red);
+    z-index: 2;
+}
+
+/* Indian book badge */
+.indian-book {
+    position: relative;
+}
+
+.india-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%);
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.3px;
+}
+
+/* Hindi book badge */
+.hindi-book {
+    position: relative;
+}
+
+.hindi-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.3px;
+}
+
+.book-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: filter 0.3s;
+}
+
+.book-card:hover img {
+    filter: brightness(1.05);
+}
+
+.book-info {
+    padding: 15px;
+}
+
+.book-info h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.book-info .author {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section {
+    background-color: var(--bg-about);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 70px 24px;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    line-height: 1.85;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+    padding: 70px 24px;
+    background-color: var(--bg);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-item .icon {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.contact-item p a {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.contact-item p a:hover {
+    color: #ff4d4d;
+    text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #000;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 22px;
+    font-size: 0.88rem;
+    letter-spacing: 0.3px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2.1rem;
+    }
+
+    nav ul {
+        gap: 16px;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+}
